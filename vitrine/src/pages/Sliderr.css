@@ -1,0 +1,85 @@
+/* styles.css */
+
+/* Container for the image and overlay */
+.my-container {
+    display: flex;
+    justify-content: center;
+   margin: auto;
+   margin-top: 5px;
+
+  }
+  
+  .my-container-center {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .my-container-padding {
+    padding: 16px;
+  }
+  
+  /* Image styles */
+  .my-image-container {
+    max-height: 500px;
+    display: flex;
+    
+  }
+  
+  .my-image {
+    
+    width: 1500px;
+    height:550px;
+    object-fit: cover;
+    margin: auto;
+    margin-left: 9px;
+    
+  }
+  
+  /* Overlay styles */
+  .my-relative {
+    position: relative;
+  }
+  
+  .my-absolute {
+    position: absolute;
+  }
+  
+  .my-top-0 {
+    top: 0;
+  }
+  
+  .my-left-0 {
+    left: 0;
+  }
+  
+  .my-overlay-color {
+    color: #edf2f7; /* Replace with desired gray color */
+  }
+  
+  .my-overlay-bg {
+    background-color: rgba(0, 0, 0, 0.4); /* Replace with desired background color */
+  }
+  
+  .my-flex {
+    display: flex;
+  }
+  
+  .my-flex-col {
+    flex-direction: column;
+  }
+  
+  .my-justify-center {
+    justify-content: center;
+  }
+  
+  /* Text styles */
+  .my-font-bold {
+    font-weight: bold;
+  }
+  
+  .my-text-4xl {
+    font-size: 2.25rem;
+  }
+  
+  /* Add more styles for other text sizes as needed */
+  
