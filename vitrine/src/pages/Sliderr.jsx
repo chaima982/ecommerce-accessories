@@ -19,7 +19,7 @@ const Sliderr = () => {
             The <span className='text-orange-500'>Best</span>
           </h1>
           <h1 className='px-4 my-text-4xl my-font-bold'>
-            <span className='text-orange-500'>Foods</span> Delivered
+            <span className='text-orange-500'></span> 
           </h1>
         </div>
       </div>

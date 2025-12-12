@@ -46,7 +46,7 @@ const FoodDetails = () => {
   const product = produits.find((item) => item.ref === ref);
 
   if (!product) {
-    return <p>Product not found.</p>; // Handle case where product is not found
+    return <p>Product not found.</p>; 
   }
 
   const {

@@ -45,11 +45,7 @@ const userSchema = mongoose.Schema(
         Type: {
             type: Number
         },
-      /*   Orders:{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Orders',
-            required: true
-          }, */
+  
     }
 )
 

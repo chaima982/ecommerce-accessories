@@ -47,11 +47,16 @@ const ProductCard = (props) => {
     
       <Link onClick={handleLinkClick} to={`/foods/${ref}`}>
               
-              <img
-               src={`http://localhost:8060/getImage/${gallerie[0].name}`}  // Corrected the src attribute
-                alt={`product-img`}
-                className=" prod"
-              />
+            <img
+  src={
+    gallerie && gallerie.length > 0
+      ? `http://localhost:8060/getImage/${gallerie[0].name}`
+      : "http://localhost:8060/getImage/default.jpg" // image de secours
+  }
+  alt="product-img"
+  className="prod"
+/>
+
       </Link>
          
       </div>

@@ -1,7 +1,7 @@
 const Order = require('../Model/orderModels');
 module.exports = {
     createOrder: async (req, res) => {
-        const orderData = req.body; // Récupérer les données de la requête
+        const orderData = req.body; 
     
         try {
             const order = new Order(orderData);
@@ -9,7 +9,7 @@ module.exports = {
             res.status(201).send(order);
         } catch (e) {
             if (e.name === 'ValidationError') {
-                // Si c'est une erreur de validation, renvoyer les détails des erreurs
+
                 res.status(400).json({
                     errors: e.errors,
                     message: 'Validation error',
@@ -81,4 +81,4 @@ deleteOrder : async (req, res) => {
 },
 }
 
-// Ajoutez d'autres méthodes pour getOrder, updateOrder, etc. ici.
+

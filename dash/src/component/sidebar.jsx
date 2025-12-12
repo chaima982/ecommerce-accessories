@@ -67,13 +67,13 @@ function SideBar() {
           </li>
           
           <ul className="az">
-          <li className="nav-item" >
+      {/*     <li className="nav-item" >
             <Link className="nav-link" to="/addOrd"data-toggle="offcanvas">
               
-              <span className="menu-title">Add order</span>
+              <span className="menu-title">Add order</span> 
             </Link>
           </li>
-          
+           */}
           <li  className="nav-item">
             <Link className="nav-link" to="/listOrd"data-toggle="offcanvas">
               
@@ -91,13 +91,13 @@ function SideBar() {
           </li>
           
           <ul className="az">
-          <li className="nav-item" >
+       {/*    <li className="nav-item" >
             <Link className="nav-link" to="/addCli"data-toggle="offcanvas">
               
-              <span className="menu-title">Add client</span>
+             <span className="menu-title">Add client</span> 
             </Link>
           </li>
-          
+           */}
           <li  className="nav-item">
             <Link className="nav-link" to="/listCli"data-toggle="offcanvas">
               

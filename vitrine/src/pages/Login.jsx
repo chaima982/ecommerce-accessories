@@ -37,7 +37,9 @@ function Login() {
     };
     const onSubmitHandler = (e) =>{
       e.preventDefault()
-      const userWithEmail = userss.find(user => user.Email === data.Email);
+      const userWithEmail = Array.isArray(userss)
+  ? userss.find(user => user.Email === data.Email)
+  : null;
       if (data && userss[0].Email===data.Email)
       {window.location.href = "http://localhost:3001/"}
 

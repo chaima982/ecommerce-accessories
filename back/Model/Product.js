@@ -9,7 +9,7 @@ const gallerieSchema = new mongoose.Schema({
 const ProductSchema = new mongoose.Schema({
     ref: {
         type: String,
-        unique: true // Ajoutez cette option pour rendre la clé unique
+        unique: true 
       },
    
     name: {
@@ -18,8 +18,8 @@ const ProductSchema = new mongoose.Schema({
     },
   
     price: {
-        type: Number,
-        required: true,
+        type:String,
+     required: true
     },
     description: {
         type: String,

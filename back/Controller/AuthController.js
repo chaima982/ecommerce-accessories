@@ -19,17 +19,16 @@ const register = async (req, res, next) => {
     const { Nom, Prenom, Email, MDP, CIN, NumTel, CodePostal, Ville, Pays, Address, Type } = req.body;
 
     try {
-        // Check if the email already exists in the database
+     
         const existingUser = await User.findOne({ Email: Email });
 
         if (existingUser) {
             return res.status(409).json({ message: 'Email already in use' });
         }
 
-        // Hash the password
         const hashPass = await bcrypt.hash(MDP, 10);
 
-        // Create a new user
+    
         const user = new User({
             Nom,
             Prenom,
@@ -44,10 +43,9 @@ const register = async (req, res, next) => {
             Type,
         });
 
-        // Save the user
         await user.save();
 
-        // Respond with success message
+     
         res.json({
             message: 'User added successfully!',
         });
@@ -59,14 +57,7 @@ const register = async (req, res, next) => {
     }
 };
 
-    /*     .catch(error => {
-            res.status(500).json({
-                message: 'Error checking email',
-                error: error.message,
-            });
-        });
-};
- */
+
 const login = (req, res, next) => {
     var Email = req.body.Email
     var MDP = req.body.MDP
@@ -101,28 +92,7 @@ const login = (req, res, next) => {
             }
         })
 };
-/* const getbyid = (req, res, next) => {
-    const userId = req.params.id;
 
-    User.findById(userId)
-        .then(user => {
-            if (!user) {
-                return res.status(404).json({
-                    message: 'User not found',
-                });
-            }
-
-            res.json({
-                message: 'User found',
-                user: user,
-            });
-        })
-        .catch(error => {
-            res.status(500).json({
-                error: 'Error fetching user by id',
-            });
-        });
-}; */
 
 const update = (req, res, next) => {
     const userId = req.params.id;
@@ -192,7 +162,7 @@ const getAllUsers = (req, res, next) => {
 const getbyidClients = (req, res, next) => {
     const userId = req.params.id;
     
-    // Vous devriez d'abord rechercher l'utilisateur par son ID.
+   
     User.findById(userId)
         .then(user => {
             if (!user) {
@@ -201,7 +171,7 @@ const getbyidClients = (req, res, next) => {
                 });
             }
             
-            // Une fois que vous avez l'utilisateur, vous pouvez rechercher d'autres utilisateurs avec le même type.
+           
             User.find({ Type: 1 })
                 .then(clients => {
                     res.json(clients);
@@ -221,7 +191,7 @@ const getbyidClients = (req, res, next) => {
 const getbyidAdmin= (req, res, next) => {
     const userId = req.params.id;
     
-    // Vous devriez d'abord rechercher l'utilisateur par son ID.
+
     User.findById(userId)
         .then(user => {
             if (!user) {
@@ -230,7 +200,7 @@ const getbyidAdmin= (req, res, next) => {
                 });
             }
             
-            // Une fois que vous avez l'utilisateur, vous pouvez rechercher d'autres utilisateurs avec le même type.
+      
             User.find({ Type: 2 })
                 .then(clients => {
                     res.json(admins);

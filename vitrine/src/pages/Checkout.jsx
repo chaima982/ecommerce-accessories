@@ -25,7 +25,7 @@ const Checkout = () => {
   }, []);
  
   
-
+const [success, setSuccess] = useState(false);
  
   const [enterName, setEnterName] = useState("");
 
@@ -83,6 +83,13 @@ useEffect(() => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    setSuccess(true);
+   setTimeout(() => setSuccess(false), 3000);
+   setEnterName("");
+setEnterNumber("");
+setEnterCity("");
+setPayement("");
+
     const userShippingAddress = {
       client: enterNumber,
       orderDate:formattedCurrentDate ,
@@ -93,7 +100,7 @@ useEffect(() => {
       product:produits[0],
       totalPrice:totalAmount,
       panier: "64db589bc58757454f4c3655"
-      
+   
     };
 
     setShippingInfo([...shippingInfo,userShippingAddress])
@@ -151,50 +158,63 @@ useEffect(() => {
                : {x.name} .</div>)}
             </div>}
               <h6 className="mb-4">Vos infos</h6>
-              <form className="checkout__form" onSubmit={submitHandler}>
-                <div className="form__group">
-                  <input
-                    type="text"
-                    placeholder="Nom et Prenom"
-                    required
-                    onChange={(e) => setEnterName(e.target.value)}
-                  />
-                </div>
+             {success && (
+  <div className="alert-success">
+    ✅ Votre commande a été bien passée !
+  </div>
+)}
 
-             
-                <div className="form__group">
-                  <input
-                    type="number"
-                    placeholder="numèro de télèphone"
-                    required
-                     
-                    onChange={(e) => setEnterNumber(e.target.value)}
-                  />
-                </div>
-                
-                <div className="form__group">
-                  <input
-                    type="text"
-                    placeholder="Adresse"
-                    required
-                    onChange={(e) => setEnterCity(e.target.value)}
-                  />
-                </div>
-                <div className="form__group">
-                 <select
-                  required
-                  className="payment-select"
-                  onChange={(e) => setPayement(e.target.value)}
-                >
-                  <option value="" disabled selected>Selectionner la methode de payement</option>
-                  <option value="credit">Credit</option>
-                  <option value="cash">Cash</option>
-                </select>
-                </div>
-                <button type="submit" className="addTOCart__btn">
-                  Commander
-                </button>
-              </form>
+<form className="checkout__form" onSubmit={submitHandler}>
+  <div className="form__group">
+    <input
+      type="text"
+      placeholder="Nom et Prenom"
+      value={enterName}
+      required
+      onChange={(e) => setEnterName(e.target.value)}
+    />
+  </div>
+
+  <div className="form__group">
+    <input
+      type="number"
+      placeholder="numèro de télèphone"
+      required
+      value={enterNumber}
+      onChange={(e) => setEnterNumber(e.target.value)}
+    />
+  </div>
+
+  <div className="form__group">
+    <input
+      type="text"
+      placeholder="Adresse"
+      required
+        value={enterCity}
+      onChange={(e) => setEnterCity(e.target.value)}
+    />
+  </div>
+
+  <div className="form__group">
+    <select
+      required
+      className="payment-select"
+        value={payement}
+      onChange={(e) => setPayement(e.target.value)}
+    >
+      <option value="" disabled selected>
+        Selectionner la methode de payement
+      </option>
+      <option value="credit">Credit</option>
+      <option value="cash">Cash</option>
+    </select>
+  </div>
+
+  <button type="submit" className="addTOCart__btn">
+    Commander
+  </button>
+</form>
+
             </Col>
           
             <Col lg="4" md="6">

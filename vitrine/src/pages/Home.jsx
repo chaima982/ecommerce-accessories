@@ -6,9 +6,7 @@ import "../styles/hero-section.css";
 import { Link } from "react-router-dom";
 import Category from "../components/UI/category/Category.jsx";
 import "../styles/home.css";
-import foodCategoryImg01 from "../assets/images/hamburger.png";
-import foodCategoryImg02 from "../assets/images/pizza.png";
-import foodCategoryImg03 from "../assets/images/bread.png";
+
 import ProductCard from "../components/UI/product-card/ProductCard.jsx";
 import whyImg from "../assets/images/deliver.png";
 import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";
@@ -144,8 +142,8 @@ const [cat, setCat]=useState([])
 
             <Col lg="12">
               <div className="food__category d-flex align-items-center justify-content-center gap-4">
-          {/*  
-                <button
+
+               {/*  <button
                   className={`d-flex align-items-center gap-2 ${
                     category === "collier" ? "foodBtnActive" : ""
                   } `}
@@ -182,7 +180,7 @@ const [cat, setCat]=useState([])
                 >
                   <img src={foodCategoryImg02} alt="" />
                   Rings
-                </button> */}
+                </button>  */}
                 {cat.map((item, index) => 
                    <button
                   className={`d-flex align-items-center gap-2 ${
